@@ -1,0 +1,25 @@
+﻿@model OdeToFoodCore.ViewModels.HomePageViewModel
+
+
+@{
+    ViewBag.Title= "Home";
+}
+
+<h1>Welcome</h1>
+
+@foreach (var restaurant in Model.Restaurants) {
+
+    @Html.Partial("_Summary",restaurant)
+}
+
+<br />
+
+<div>
+    <a href="/home/Create">Create</a>
+</div>
+
+<br />
+
+@section footer{
+<h3>@Model.CurrentGreeting</h3>
+}
